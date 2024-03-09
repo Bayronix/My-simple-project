@@ -17,16 +17,21 @@
 
 // console.log(isPalindrome("hello"));
 
-function isPrime(number) {
-  if (number <= 1) {
-    return false;
-  }
-  for (let i = 2; i <= Math.sqrt(number); i++) {
-    if (number % i === 0) {
-      return false;
-    }
-  }
-  return true;
-}
+// function isPrime(number) {
+//   if (number <= 1) {
+//     return false;
+//   }
+//   for (let i = 2; i <= Math.sqrt(number); i++) {
+//     if (number % i === 0) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
 
-console.log(isPrime(2));
+// console.log(isPrime(2));
+
+function reverseString(string) {
+  const reversed = string.split("").reverse().join("");
+  return reversed;
+}

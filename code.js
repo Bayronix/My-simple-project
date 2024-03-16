@@ -303,11 +303,78 @@
 //   updatePotionName(oldName, newName) {},
 // };
 
-function getExtremeScores(scores) {
-  const maxNum = Math.max(...scores);
-  const minNum = Math.min(...scores);
-  return `best: ${maxNum}, worst: ${minNum}.`;
+// function getExtremeScores(scores) {
+//   const maxNum = Math.max(...scores);
+//   const minNum = Math.min(...scores);
+//   return `best: ${maxNum}, worst: ${minNum}.`;
+// }
+
+// const scores = [90, 85, 75, 95, 80];
+// console.log(getExtremeScores(scores));
+
+// function deliverPizza(pizzaName) {
+//   return `Delivering ${pizzaName} pizza.`;
+// }
+
+// function makePizza(pizzaName) {
+//   return `Pizza ${pizzaName} is being prepared, please wait...`;
+// }
+
+// function makeMessage(pizzaName, callback) {
+//   const pizzaPreparationMessage = makePizza(pizzaName);
+//   const deliveryMessage = callback(pizzaName);
+//   return `${pizzaPreparationMessage}\n${deliveryMessage}`;
+// }
+
+// const deliveryCallback = function (pizzaName) {
+//   return deliverPizza(pizzaName);
+// };
+
+// console.log(makeMessage("Margherita", deliveryCallback));
+
+// function registerGuest(name, callback) {
+//   console.log(`Registering ${name}!`);
+//   callback(name);
+// }
+
+// // Передаємо інлайн-функцію greet у якості колбека
+// registerGuest("Mango", function greet(name) {
+//   console.log(`Welcome ${name}!`);
+// });
+
+// // Передаємо інлайн-функцію notify у якості колбека
+// registerGuest("Poly", function notify(name) {
+//   console.log(`Dear ${name}, your room will be ready in 30 minutes`);
+// });
+
+// function greetGuest(name) {
+//   console.log(`Welcome, ${name}!`);
+// }
+
+// registerGuest("John", greetGuest);
+
+// function makePizza(pizzaName, callback) {
+//   console.log(`Pizza ${pizzaName} is being prepared, please wait...`);
+//   callback(pizzaName);
+// }
+
+// function deliverPizza(pizzaName) {
+//   console.log(`Delivering pizza ${pizzaName}`);
+// }
+
+// makePizza("Ultracheese", deliverPizza);
+// makePizza("Royal Grand", deliverPizza);
+
+function filterArray(numbers, value) {
+  let count = 0; // Ініціалізуємо лічильник
+
+  numbers.forEach((num) => {
+    if (numbers < value) {
+      count++;
+    }
+  });
+
+  return count;
 }
 
-const scores = [90, 85, 75, 95, 80];
-console.log(getExtremeScores(scores));
+console.log(filterArray([1, 2, 3, 4, 5], 3));

@@ -365,16 +365,31 @@
 // makePizza("Ultracheese", deliverPizza);
 // makePizza("Royal Grand", deliverPizza);
 
-function filterArray(numbers, value) {
-  let count = 0; // Ініціалізуємо лічильник
+// function filterArray(numbers, value) {
+//   let count = 0; // Ініціалізуємо лічильник
 
-  numbers.forEach((num) => {
-    if (numbers < value) {
-      count++;
-    }
-  });
+//   numbers.forEach((num) => {
+//     if (numbers < value) {
+//       count++;
+//     }
+//   });
 
-  return count;
-}
+//   return count;
+// }
 
-console.log(filterArray([1, 2, 3, 4, 5], 3));
+// console.log(filterArray([1, 2, 3, 4, 5], 3));
+
+// function radiusCircle(radius) {
+//   const sumRadiusCircle = Math.PI * radius ** 2;
+//   return parseFloat(sumRadiusCircle.toFixed(3));
+// }
+
+// console.log(radiusCircle(6));
+
+const messengers = [`facebook`, `instagram`, `twitter`];
+
+const messenger = (localMessenger) => `https://${localMessenger}.com`;
+
+console.log(messenger(`facebook`));
+
+// https:facebook.com

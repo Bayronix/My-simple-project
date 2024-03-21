@@ -386,10 +386,15 @@
 
 // console.log(radiusCircle(6));
 
-const messengers = [`facebook`, `instagram`, `twitter`];
+// const messengers = [`facebook`, `instagram`, `twitter`];
 
-const messenger = (localMessenger) => `https://${localMessenger}.com`;
+// const messenger = (localMessenger) => `https://${localMessenger}.com`;
 
-console.log(messenger(`facebook`));
+// console.log(messenger(`facebook`));
 
-// https:facebook.com
+// // https:facebook.com
+
+const planets = ["Earth", "Mars", "Venus", "Jupiter"];
+
+const planetsLengths = planets.map((planet) => planet.length);
+console.log(planetsLengths);

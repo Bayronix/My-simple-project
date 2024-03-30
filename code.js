@@ -653,17 +653,49 @@
 //   },
 // ];
 
-const players = [
-  { name: "Mango", playtime: 1270, gamesPlayed: 4 },
-  { name: "Poly", playtime: 469, gamesPlayed: 2 },
-  { name: "Ajax", playtime: 690, gamesPlayed: 3 },
-  { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+// const players = [
+//   { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+//   { name: "Poly", playtime: 469, gamesPlayed: 2 },
+//   { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+//   { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+// ];
+
+// const totalAveragePlaytimePerGame = players.reduce((total, player) => {
+//   return total + player.playtime / player.gamesPlayed;
+// }, 0);
+
+// const average = totalAveragePlaytimePerGame / players.length;
+
+// return average;
+
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+  {
+    title: "The Dreams in the Witch House",
+    author: "Howard Lovecraft",
+    rating: 8.67,
+  },
 ];
+const MIN_BOOK_RATING = 8;
 
-const totalAveragePlaytimePerGame = players.reduce((total, player) => {
-  return total + player.playtime / player.gamesPlayed;
-}, 0);
+const names = books
+  .filter((a) => a.rating >= MIN_BOOK_RATING)
+  .toSorted((a, b) => a.rating - b.rating)
+  .map((a) => a.author);
 
-const average = totalAveragePlaytimePerGame / players.length;
-
-return average;
+console.log(names);

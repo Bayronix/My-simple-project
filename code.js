@@ -1171,30 +1171,33 @@
 // Легка:
 // Напишіть функцію, яка приймає масив чисел в якості аргументу і повертає суму всіх додатних чисел у масиві.
 
-function ageOfPerson(age) {
-  const objectValue = {
-    Victor: 25,
-    Alice: 30,
-    Bob: 28,
-    Emily: 22,
-  };
+// function ageOfPerson(age) {
+//   const objectValue = {
+//     Victor: 25,
+//     Alice: 30,
+//     Bob: 28,
+//     Emily: 22,
+//   };
 
-  const namesWithAge = [];
+//   const namesWithAge = [];
 
-  for (const name in objectValue) {
-    if (objectValue[name] === age) {
-      namesWithAge.push(name);
-    }
-  }
+//   for (const name in objectValue) {
+//     if (objectValue[name] === age) {
+//       namesWithAge.push(name);
+//     }
+//   }
 
-  return namesWithAge;
-}
+//   return namesWithAge;
+// }
 
-// Example usage:
-console.log(ageOfPerson(25)); // Output: ["Victor"]
-console.log(ageOfPerson(30)); // Output: ["Alice"]
-console.log(ageOfPerson(28)); // Output: ["Bob"]
-console.log(ageOfPerson(22)); // Output: ["Emily"]
+// // Example usage:
+// console.log(ageOfPerson(25)); // Output: ["Victor"]
+// console.log(ageOfPerson(30)); // Output: ["Alice"]
+// console.log(ageOfPerson(28)); // Output: ["Bob"]
+// console.log(ageOfPerson(22)); // Output: ["Emily"]
 
 // Складна:
 // Напишіть функцію, яка приймає масив об'єктів з властивістю "вік" і повертає середній вік об'єктів у масиві.
+
+const searchByClass = querySelectorAll(".ul-selector");
+searchByClass.classList("class");

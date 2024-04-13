@@ -700,12 +700,501 @@
 
 // console.log(names);
 
-const baseSalary = 30000;
-const overtime = 10;
-const rate = 20;
+// const baseSalary = 30000;
+// const overtime = 10;
+// const rate = 20;
 
-const getWage = (baseSalary, overtime, rate) => {
-  return baseSalary + overtime * rate;
-};
+// const getWage = (baseSalary, overtime, rate) => {
+//   return baseSalary + overtime * rate;
+// };
 
-console.log(getWage(baseSalary, overtime, rate));
+// console.log(getWage(baseSalary, overtime, rate));
+
+// class User {
+//   constructor(params) {
+//     this.name = params.name;
+//     this.email = params.email;
+//   }
+
+//   getEmail() {
+//     return this.email;
+//   }
+
+//   changeEmail(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+
+// class User {
+//   name;
+//   #email;
+
+//   constructor(params) {
+//     this.name = params.name;
+//     this.#email = params.email;
+//   }
+
+//   // Публічний метод для отримання електронної пошти
+//   getEmail() {
+//     return this.#email;
+//   }
+
+//   // Публічний метод для зміни електронної пошти
+//   changeEmail(newEmail) {
+//     if (this.#validateEmail(newEmail)) {
+//       this.#email = newEmail;
+//     } else {
+//       console.log("Invalid email format");
+//     }
+//   }
+
+//   // Приватний метод для валідації електронної пошти
+//   #validateEmail(email) {
+//     return email.includes("@");
+//   }
+// }
+
+// const mango = new User({
+//   name: "Mango",
+//   email: "mango@mail.com",
+// });
+
+// // Спробуємо змінити електронну пошту
+// mango.changeEmail("newmail.com"); // "Invalid email format"
+// mango.changeEmail("new@mail.com");
+// console.log(mango.getEmail()); // "new@mail.com"
+
+// // Прямий виклик приватного методу ззовні призведе до помилки
+// mango.#validateEmail("test"); // Помилка
+
+// class Car {
+//   static maxPrice = 50000;
+//   #price;
+
+//   constructor(params) {
+//     this.#price = params.price;
+//   }
+
+//   get price() {
+//     return this.#price;
+//   }
+
+//   set price(newPrice) {
+//     if (newPrice <= Car.maxPrice) {
+//       this.#price = newPrice;
+//     }
+//   }
+// }
+
+// const audi = new Car({ price: 35000 });
+// console.log(audi.price); // 35000
+
+// audi.price = 49000;
+// console.log(audi.price); // 49000
+
+// audi.price = 51000;
+// console.log(audi.price); // 49000
+
+// class Car {
+//   static #maxPrice = 50000;
+
+//   static checkPrice(price) {
+//     if (price <= this.#maxPrice) {
+//       return "Success! Price is within acceptable limits";
+//     } else {
+//       return "Error! Price exceeds the maximum";
+//     }
+//   }
+// }
+
+// const audi = new Car({ price: 36000 });
+// const bmw = new Car({ price: 64000 });
+
+// console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
+// console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
+
+// function isIsogram(str) {
+//   let strIsogram = [];
+//   for (const element of str) {
+//     if (element !== strIsogram) {
+//       return false;
+//     } else {
+//       return true;
+//     }
+//   }
+// }
+// console.log(isIsogram("Dermatoglyphics"));
+
+// function greet(name) {
+//   console.log(`Hello, ${name}! I am ${this.person}`);
+// }
+
+// const person = "John";
+// const context = {
+//   person: "Alice",
+// };
+
+// greet.call(context, "Bob");
+
+//Напишіть дві функції
+// letMeSeeYourName(callback) - запитує ім'я користувача
+//через prompt та викликає callback функцію
+//greet(name) - коллбек, що приймає ім'я і логірує в консоль
+//Рядок "Привіт <name>"
+//Реалізуй перевірку, що prompt не порожній
+
+// const letMeSeeYourName = (callback) => {
+//   const userName = prompt("Введіть своє ім'я");
+//   callback(userName);
+// };
+
+// const greet = (name) => {
+//   console.log(`Привіт ${name}`);
+// };
+
+// letMeSeeYourName(greet);
+
+// const users = [
+//   {
+//     id: "701b29c3-b35d-4cf1-a5f6-8b12b29a5081",
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     skills: ["ipsum", "lorem"],
+//     gender: "male",
+//     age: 37,
+//   },
+//   {
+//     id: "7a3cbd18-57a1-4534-8e12-1caad921bda1",
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
+//     gender: "female",
+//     age: 34,
+//   },
+//   {
+//     id: "88beb2f3-e4c2-49f3-a0a0-ecf957a95af3",
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     skills: ["nulla", "anim", "proident", "ipsum", "elit"],
+//     gender: "male",
+//     age: 24,
+//   },
+//   {
+//     id: "249b6175-5c30-44c6-b154-f120923736f5",
+//     name: "Elma Head",
+//     email: "elmahead@omatom.com",
+//     eyeColor: "green",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     isActive: true,
+//     balance: 2278,
+//     skills: ["adipisicing", "irure", "velit"],
+//     gender: "female",
+//     age: 21,
+//   },
+//   {
+//     id: "334f8cb3-eb04-45e6-abf4-4935dd439b70",
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     isActive: true,
+//     balance: 3951,
+//     skills: ["ex", "culpa", "nostrud"],
+//     gender: "male",
+//     age: 27,
+//   },
+//   {
+//     id: "150b00fb-dd82-427d-9faf-2879ea87c695",
+//     name: "Blackburn Dotson",
+//     email: "blackburndotson@furnigeer.com",
+//     eyeColor: "brown",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     isActive: false,
+//     balance: 1498,
+//     skills: ["non", "amet", "ipsum"],
+//     gender: "male",
+//     age: 38,
+//   },
+//   {
+//     id: "e1bf46ab-7168-491e-925e-f01e21394812",
+//     name: "Sheree Anthony",
+//     email: "shereeanthony@kog.com",
+//     eyeColor: "brown",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     isActive: true,
+//     balance: 2764,
+//     skills: ["lorem", "veniam", "culpa"],
+//     gender: "female",
+//     age: 39,
+//   },
+// ];
+
+// const usersNames = users.map((user) => user.name);
+// console.log(usersNames);
+
+// const getByEyeColors = (users, eyeColor) => {
+//   return users.filter((user) => user.eyeColor === eyeColor);
+// };
+
+// console.log(getByEyeColors(users, "brown"));
+
+// const getByGender = (users, gender) => {
+//   return users.reduce((acc, user) => {
+//     if (user.gender === gender) {
+//       acc.push(user.name);
+//     }
+//     return acc;
+//   }, []);
+// };
+
+// console.log(getByGender(users, "male"));
+
+// // Отримати користувача (не масив) по email (поле email, він унікальний).
+
+// const getUserByEmail = (users, email) => users.find((user) => user.email);
+
+// console.log(getUserByEmail(users, "shereeanthony@kog.com"));
+
+// function numbers(number) {
+//   return number > 0
+//     ? "позитивне"
+//     : number < 0
+//     ? "негативне"
+//     : number == 0
+//     ? "нуль"
+//     : "";
+// }
+
+// console.log(numbers(-1));
+// console.log(numbers(+1));
+// console.log(numbers(0));
+
+// //  "позитивне", "негативне" або "нуль"
+
+// function aString(string) {
+//   return string.match(/[aeiou]/gi).join("");
+// }
+
+// console.log(aString("lol"));
+// function countLetters(string) {
+//   let sumCountLetters = {
+//     голосні: 0,
+//     приголосні: 0,
+//   };
+//   for (let letter of string.toLowerCase()) {
+//     if (/[a-z]/.test(letter)) {
+//       // Виправлено регулярний вираз
+//       if (/[aeiou]/i.test(letter)) {
+//         // Перевірка, чи є літера голосною
+//         sumCountLetters.голосні++;
+//       } else {
+//         sumCountLetters.приголосні++;
+//       }
+//     }
+//   }
+//   return sumCountLetters; // Повертаємо результат усередині функції
+// }
+
+// console.log(countLetters("hello")); // Повинно повернути { голосні: 2, приголосні: 3 }
+// console.log(countLetters("JavaScript")); // Повинно повернути { голосні: 3, приголосні: 7 }
+// ........
+// Уявіть, що ви спостерігаєте за грою в волейбол. Вам потрібно написати програму, яка рахує кількість голів кожної команди за кількість подач. У волейболі кожна подача може призвести до забиття голу однією з команд.
+
+// Вхідні дані: Кількість подач (ціле число).
+
+// Вихідні дані: Кількість голів для кожної з двох команд.
+
+// Алгоритм:
+
+// Створіть змінні для кількості голів кожної команди, початково вони рівні нулю.
+// Прийміть введення користувача - кількість подач.
+// Використовуючи введені дані, обчисліть кількість голів кожної команди.
+// Виведіть результат - кількість голів для кожної з команд.
+
+// let teamAScore = 0;
+// let teamBScore = 0;
+
+// function calculateGoalsByServes(serves) {
+//   for (let i = 0; i < serves; i++) {
+//     if (i % 2 === 0) {
+//       teamAScore++; // Гол для команди A
+//     } else {
+//       teamBScore++; // Гол для команди B
+//     }
+//   }
+// }
+
+// // Приклад використання
+// const serves = 20; // Припустимо, що було 20 подач
+// calculateGoalsByServes(serves);
+
+// // Виведення результату
+// console.log("Кількість голів для команди A:", teamAScore);
+// console.log("Кількість голів для команди B:", teamBScore);
+
+// let promptN = prompt("Введіть число");
+// let promptNumber = parseInt(promptN);
+
+// // Перевірка на те, чи вдалося коректно перетворити введене значення в число
+// if (!isNaN(promptNumber)) {
+//   let sum = 0;
+//   for (let i = 1; i <= promptNumber; i++) {
+//     sum += i;
+//   }
+//   console.log("Сума чисел від 1 до " + promptNumber + " дорівнює " + sum);
+// } else {
+//   console.log("Введено некоректне число!");
+// }
+
+// Задача 1: Обчислення суми чисел
+
+// Завдання: Напишіть програму, яка обчислює суму чисел від 1 до N, де N - це введене користувачем число.
+// Рівень складності: Простий.
+
+// let countOfNum = 10;
+
+// for (let i = 1; i <= 10; i++) {
+//   console.log(countOfNum * i);
+// }
+
+// Задача 2: Таблиця множення
+
+// Завдання: Виведіть таблицю множення від 1 до 10.
+// Рівень складності: Простий.
+// function isPrime(num) {
+//   if (num <= 1) {
+//     return "Not a simple num";
+//   }
+//   for (let i = 2; i <= Math.sqrt(num); i++) {
+//     if (num % i === 0) {
+//       return "Not a simple num";
+//     }
+//   }
+//   return "Simple num";
+// }
+
+// console.log(isPrime(10));
+
+// ????????????????????????????????????/
+
+// Задача 3: Перевірка простих чисел
+
+// Завдання: Напишіть програму, яка перевіряє, чи є введене користувачем число простим.
+// Рівень складності: Середній.
+// console.log("Програма для визначення факторіалу");
+// let notFactorial = prompt("Введіть число");
+// let factorial = 1; // Ініціалізуємо змінну для збереження факторіалу
+// if (!isNaN(notFactorial)) {
+//   for (let i = 1; i <= notFactorial; i++) {
+//     factorial *= i; // Знаходимо факторіал числа
+//   }
+//   console.log("Факторіал числа " + notFactorial + " дорівнює " + factorial);
+// } else {
+//   console.log("Це число а не буква");
+// }
+
+// Задача 4: Факторіал числа
+
+// Завдання: Знайдіть факторіал введеного користувачем числа.
+// Рівень складності: Середній.
+// function isPrime(num) {
+//   let primes = [];
+
+//   for (let n of num) {
+//     if (n <= 1) {
+//       primes.push(n + " is not a prime number");
+//       continue;
+//     }
+//     let isPrime = true;
+//     for (let i = 2; i <= Math.sqrt(n); i++) {
+//       if (n % i === 0) {
+//         isPrime = false;
+//         break;
+//       }
+//     }
+//     if (isPrime) {
+//       primes.push(n + " is a prime number");
+//     } else {
+//       primes.push(n + " is not a prime number");
+//     }
+//   }
+//   return primes;
+// }
+
+// console.log(isPrime([5, 10, 15])); // [ '5 is a prime number', '10 is not a prime number', '15 is not a prime number' ]
+// console.log(isPrime([6])); // [ '6 is not a prime number' ]
+
+// Задача 5: Пошук простих чисел у діапазоні
+
+// Завдання: Напишіть програму, яка знаходить всі прості числа у заданому діапазоні від A до B.
+// Рівень складності: Складний.
+//  for (let n of num) повторити
+
+// function numbers(num1, num2) {
+//   return num1 + num2;
+// }
+// console.log(numbers(4, 5));
+
+// Проста:
+// Напишіть функцію, яка приймає два числа в якості аргументів і повертає їх суму.
+
+// const massiveOfNumbers = [1, 2, 3, 4, 5];
+// let sumOfNumbers = 0;
+// for (let i = 0; i < massiveOfNumbers.length; i++) {
+//   sumOfNumbers += massiveOfNumbers[i];
+// }
+// console.log(sumOfNumbers);
+
+// function newPalindrome(string) {
+//   return string === string.split("").reverse().join("");
+// }
+
+// // Example usage:
+// console.log(newPalindrome("racecar")); // true
+// console.log(newPalindrome("hello")); // false
+
+// Середня:
+// Напишіть функцію, яка перевіряє, чи є задане слово паліндромом. Паліндром - це слово, яке читається однаково зліва направо та справа наліво.
+
+// Легка:
+// Напишіть функцію, яка приймає масив чисел в якості аргументу і повертає суму всіх додатних чисел у масиві.
+
+function ageOfPerson(age) {
+  const objectValue = {
+    Victor: 25,
+    Alice: 30,
+    Bob: 28,
+    Emily: 22,
+  };
+
+  const namesWithAge = [];
+
+  for (const name in objectValue) {
+    if (objectValue[name] === age) {
+      namesWithAge.push(name);
+    }
+  }
+
+  return namesWithAge;
+}
+
+// Example usage:
+console.log(ageOfPerson(25)); // Output: ["Victor"]
+console.log(ageOfPerson(30)); // Output: ["Alice"]
+console.log(ageOfPerson(28)); // Output: ["Bob"]
+console.log(ageOfPerson(22)); // Output: ["Emily"]
+
+// Складна:
+// Напишіть функцію, яка приймає масив об'єктів з властивістю "вік" і повертає середній вік об'єктів у масиві.

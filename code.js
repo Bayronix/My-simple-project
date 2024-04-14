@@ -1199,5 +1199,47 @@
 // Складна:
 // Напишіть функцію, яка приймає масив об'єктів з властивістю "вік" і повертає середній вік об'єктів у масиві.
 
-const searchByClass = querySelectorAll(".ul-selector");
-searchByClass.classList("class");
+// const searchByClass = querySelectorAll(".ul-selector");
+// searchByClass.classList("class");
+
+const createButton = document.querySelector("[data-create]");
+const destroyButton = document.querySelector("[data-destroy]");
+const boxesContainer = document.querySelector("#boxes");
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}
+
+function createBoxes(amount) {
+  // Make array of elements
+  const arrayOfBoxes = [];
+  let newWidth = 30;
+  let newHeight = 30;
+
+  if (amount >= 1 && amount <= 100) {
+    for (let i = 0; i < amount; i++) {
+      const randomColor = getRandomHexColor();
+      newWidth += 10;
+      newHeight += 10;
+
+      const markup = `<div class="box" style="background-color: ${randomColor}; width:${newWidth}px; height:${newHeight}px;"></div>`;
+      arrayOfBoxes.push(markup);
+    }
+
+    // Render elemnts to DOM
+    boxesContainer.innerHTML = arrayOfBoxes.join("");
+  }
+}
+function destroyBoxes() {
+  boxesContainer.innerHTML = "";
+}
+
+// Execution...
+createButton.addEventListener("click", () => {
+  const amountElementsUser = document.querySelector("input").value;
+  createBoxes(amountElementsUser);
+  document.querySelector("input").value = null;
+});
+destroyButton.addEventListener("click", destroyBoxes);

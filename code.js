@@ -1202,44 +1202,107 @@
 // const searchByClass = querySelectorAll(".ul-selector");
 // searchByClass.classList("class");
 
-const createButton = document.querySelector("[data-create]");
-const destroyButton = document.querySelector("[data-destroy]");
-const boxesContainer = document.querySelector("#boxes");
+// const createButton = document.querySelector("[data-create]");
+// const destroyButton = document.querySelector("[data-destroy]");
+// const boxesContainer = document.querySelector("#boxes");
 
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
-}
+// function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215)
+//     .toString(16)
+//     .padStart(6, 0)}`;
+// }
 
-function createBoxes(amount) {
-  // Make array of elements
-  const arrayOfBoxes = [];
-  let newWidth = 30;
-  let newHeight = 30;
+// function createBoxes(amount) {
+//   // Make array of elements
+//   const arrayOfBoxes = [];
+//   let newWidth = 30;
+//   let newHeight = 30;
 
-  if (amount >= 1 && amount <= 100) {
-    for (let i = 0; i < amount; i++) {
-      const randomColor = getRandomHexColor();
-      newWidth += 10;
-      newHeight += 10;
+//   if (amount >= 1 && amount <= 100) {
+//     for (let i = 0; i < amount; i++) {
+//       const randomColor = getRandomHexColor();
+//       newWidth += 10;
+//       newHeight += 10;
 
-      const markup = `<div class="box" style="background-color: ${randomColor}; width:${newWidth}px; height:${newHeight}px;"></div>`;
-      arrayOfBoxes.push(markup);
-    }
+//       const markup = `<div class="box" style="background-color: ${randomColor}; width:${newWidth}px; height:${newHeight}px;"></div>`;
+//       arrayOfBoxes.push(markup);
+//     }
 
-    // Render elemnts to DOM
-    boxesContainer.innerHTML = arrayOfBoxes.join("");
-  }
-}
-function destroyBoxes() {
-  boxesContainer.innerHTML = "";
-}
+//     // Render elemnts to DOM
+//     boxesContainer.innerHTML = arrayOfBoxes.join("");
+//   }
+// }
+// function destroyBoxes() {
+//   boxesContainer.innerHTML = "";
+// }
 
-// Execution...
-createButton.addEventListener("click", () => {
-  const amountElementsUser = document.querySelector("input").value;
-  createBoxes(amountElementsUser);
-  document.querySelector("input").value = null;
-});
-destroyButton.addEventListener("click", destroyBoxes);
+// // Execution...
+// createButton.addEventListener("click", () => {
+//   const amountElementsUser = document.querySelector("input").value;
+//   createBoxes(amountElementsUser);
+//   document.querySelector("input").value = null;
+// });
+// destroyButton.addEventListener("click", destroyBoxes);
+
+// Перший приклад
+
+// task 1
+
+// const sumOfSmallestNum = (...nums) => {
+//   const sortedNumbers = nums.toSorted((a, b) => a - b);
+//   return sortedNumbers[0] + sortedNumbers[1];
+// };
+
+// console.log(sumOfSmallestNum(5, 3, 2, 1, 4));
+
+// task 2
+// const isPalindrome = (...strings) => {
+//   const reversedStrings = strings.map((str) =>
+//     str.split("").reverse().join("")
+//   );
+
+//   for (let i = 0; i < strings.length; i++) {
+//     if (strings[i] !== reversedStrings[i]) {
+//       return false;
+//     }
+//   }
+
+//   return true;
+// };
+
+// console.log(isPalindrome("racecar", "level"));
+
+// task 3
+// function anagramsString(str1, str2) {
+//   if (str1.lenght !== str2.lenght) {
+//     return "Not an anagram";
+//   }
+
+//   const stringNumber1 = str1.split("").sort().join("");
+//   const stringNumber2 = str2.split("").sort().join("");
+
+//   if (stringNumber1 === stringNumber2) {
+//     return "Annagram";
+//   } else {
+//     return "Not an anagram";
+//   }
+// }
+// console.log(anagramsString("part", "trap"));
+
+// task 4
+
+// function FibonacciSequence(num) {
+//   let sequence = [];
+//   for (let i = 0; i < num; i++) {
+//     if (i === 0 || i === 1) {
+//       sequence.push(i);
+//     } else {
+//       sequence.push(sequence[i - 1] + sequence[i - 2]);
+//     }
+//   }
+//   return sequence;
+// }
+
+// console.log(FibonacciSequence(4));
+
+// 

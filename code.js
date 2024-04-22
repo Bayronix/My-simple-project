@@ -1305,4 +1305,109 @@
 
 // console.log(FibonacciSequence(4));
 
-// 
+// function minAndMaxNum(num) {
+//   const min = num.reduce((a, b) => Math.min(a, b));
+//   const max = num.reduce((a, b) => Math.max(a, b));
+//   return `Min number ${min}. Max number ${max}`;
+// }
+
+// console.log(minAndMaxNum([1, 2, 3, 4, 5]));
+// console.log(minAndMaxNum([5, 6, 7, 8, 9]));
+
+// task 1
+
+// const button = document.querySelector(".buttonCreate");
+
+// function buttonMath() {
+//   const randomCount = Math.floor(Math.random() * 10) + 1;
+//   const randomNumbers = [];
+
+//   for (let i = 0; i < randomCount; i++) {
+//     randomNumbers.push(Math.floor(Math.random() * 100) + 1);
+//   }
+
+//   const text = document.createElement("p");
+//   text.textContent = `Випадкові числа: ${randomNumbers}`;
+//   document.body.appendChild(text);
+
+//   const min = randomNumbers.reduce((a, b) => Math.min(a, b));
+//   const max = randomNumbers.reduce((a, b) => Math.max(a, b));
+//   const createNum = document.createElement("p");
+//   createNum.textContent = `Мінімальне число: ${min}. Максимальне число: ${max}`;
+//   document.body.appendChild(createNum);
+// }
+
+// button.addEventListener("click", function () {
+//   buttonMath();
+// });
+
+// ?
+// const ulElement = document.querySelector(".ul_class");
+
+// data.forEach((user) => {
+//   const liElement = document.createElement("li");
+//   liElement.textContent = `ID: ${user.id}, Name: ${user.name}, Age: ${user.age}`;
+//   ulElement.appendChild(liElement);
+// });
+
+// Після натискання кнопки "SWAP ME" здійснюється обмін вмістом між двома інпутами.
+// Ви можете натиснути на неї кілька разів або вручну змінити вміст інпутів.
+
+// const refs = {
+//   swapButton: document.querySelector("#swapButton"),
+//   leftSwapInput: document.querySelector("#leftSwapInput"),
+//   rightSwapInput: document.querySelector("#rightSwapInput"),
+// };
+
+// refs.swapButton.addEventListener("click", onSwapButtonClick);
+
+// function onSwapButtonClick(event) {
+//   const rightValue = refs.rightSwapInput.value;
+//   refs.rightSwapInput.value = refs.leftSwapInput.value;
+//   refs.leftSwapInput.value = rightValue;
+// }
+
+// Кнопка "Приховати" ховає текст і замінює назву кнопки на
+// "Розкрити", при повторному натисканні текст знову стає доступним
+// і кнопка набуває початкового вигляду.
+// п
+
+// const refs = {
+//   passwordInput: document.querySelector("#passwordInput"),
+//   passwordButton: document.querySelector("#passwordButton"),
+// };
+
+// refs.passwordButton.addEventListener("click", onSwapButtonClick);
+
+// function onSwapButtonClick(event) {
+//   if (refs.passwordInput.style.display === "none") {
+//     refs.passwordInput.style.display = "block";
+//     refs.passwordButton.textContent = "Сховати";
+//   } else {
+//     refs.passwordInput.style.display = "none";
+//     refs.passwordButton.textContent = "Розкрити";
+//   }
+// }
+
+// При натисканні на кожну з кнопок підсумовуються значення з data-атрибутів.
+// За натисканням на кнопку "Вивести результат" виводиться сума значення, а також статистика з
+// інформацією про те, яка кнопка була натиснута скільки разів.
+
+// const refs = {
+//   button: document.querySelector(".calcButton"),
+//   resultButton: document.querySelector(".resultButton"),
+//   resultSection: document.querySelector(".resultSection"),
+// };
+
+// refs.button.addEventListener("click", onButtonClick);
+
+// let sum = 0;
+// const buttonClick = {};
+
+// function onButtonClick(event) {
+//   const number = parseInt(event.target.dataset.number);
+//   sum += number;
+//   buttonClick[event.target.textContent] = event.target.textConten || +1;
+//   console.log("Поточна сума:", sum);
+// }
+// ?????????///

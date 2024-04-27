@@ -1411,3 +1411,45 @@
 //   console.log("Поточна сума:", sum);
 // }
 // ?????????///
+
+// try {
+//   const data = JSON.parse("Well, this is awkward");
+// } catch (error) {
+//   console.log(error.name); // "SyntaxError"
+//   console.log(error.message); // Unexpected token W in JSON at position 0
+// }
+
+// console.log("✅ This is fine, we handled parsing error in try...catch");
+
+// localStorage.setItem("ui-theme", "light");
+// console.log(localStorage); // Storage {ui-theme: "light", length: 1}
+
+// const settings = {
+//   theme: "dark",
+//   isAuthenticated: true,
+//   options: [1, 2, 3],
+// };
+// localStorage.setItem("settings", JSON.stringify(settings));
+
+// const savedSettings = localStorage.getItem("settings");
+// console.log(savedSettings); // A string
+
+// const parsedSettings = JSON.parse(savedSettings);
+// console.log(parsedSettings); // Settings object
+
+const form = document.querySelector(".feedback-form");
+const textarea = form.elements.message;
+const localStorageKey = "goit-example-message";
+
+textarea.value = localStorage.getItem(localStorageKey) ?? "";
+
+form.addEventListener("input", (evt) => {
+  localStorage.setItem(localStorageKey, evt.target.value);
+});
+
+form.addEventListener("submit", (evt) => {
+  evt.preventDefault();
+  console.log(evt.target.elements.message.value);
+  localStorage.removeItem(localStorageKey);
+  form.reset();
+});

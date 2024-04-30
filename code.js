@@ -1437,19 +1437,160 @@
 // const parsedSettings = JSON.parse(savedSettings);
 // console.log(parsedSettings); // Settings object
 
-const form = document.querySelector(".feedback-form");
-const textarea = form.elements.message;
-const localStorageKey = "goit-example-message";
+// const form = document.querySelector(".feedback-form");
+// const textarea = form.elements.message;
+// const localStorageKey = "goit-example-message";
 
-textarea.value = localStorage.getItem(localStorageKey) ?? "";
+// textarea.value = localStorage.getItem(localStorageKey) ?? "";
 
-form.addEventListener("input", (evt) => {
-  localStorage.setItem(localStorageKey, evt.target.value);
+// form.addEventListener("input", (evt) => {
+//   localStorage.setItem(localStorageKey, evt.target.value);
+// });
+
+// form.addEventListener("submit", (evt) => {
+//   evt.preventDefault();
+//   console.log(evt.target.elements.message.value);
+//   localStorage.removeItem(localStorageKey);
+//   form.reset();
+// });
+// Глобальна змінна
+// const value = "I'm a global variable";
+
+// function foo() {
+//   // Можна звернутися до глобальної змінної
+//   console.log(value); // "I'm a global variable"
+// }
+
+// foo();
+// // Можна звернутися до глобальної змінної
+// console.log(value);
+// // "I'm a global variable"
+
+// function makeTransaction(quantity, pricePerDroid) {
+//   const totalPrice = quantity * pricePerDroid;
+//   return `You ordered ${quantity} droids worth ${totalPrice} credits!`;
+// }
+
+// console.log(makeTransaction(5, 3000)); // "You ordered 5 droids worth 15000 credits!"
+// console.log(makeTransaction(3, 1000)); // "You ordered 3 droids worth 3000 credits!"
+// console.log(makeTransaction(10, 500)); // "You ordered 10 droids worth 5000 credits!"
+
+// function getShippingMessage(country, price, deliveryFee) {
+//   return `Shipping to ${country} will cost ${price + deliveryFee} credits`;
+// }
+
+// console.log(getShippingMessage("Australia", 120, 50)); // "Shipping to Australia will cost 170 credits"
+// console.log(getShippingMessage("Germany", 80, 20)); // "Shipping to Germany will cost 100 credits"
+// console.log(getShippingMessage("Sweden", 100, 20)); // "Shipping to Sweden will cost 120 credits"
+
+// function getElementWidth(content, padding, border) {
+//   return parseFloat(content) + parseFloat(padding) * 2 + parseFloat(border) * 2;
+// }
+
+// console.log(getElementWidth("50px", "8px", "4px")); // 74
+// console.log(getElementWidth("60px", "12px", "8.5px")); // 101
+// console.log(getElementWidth("200px", "0px", "0px")); // 200
+
+// function sumWithDiscount(product, discount) {
+//   const sum =
+//     parseFloat(product) - (parseFloat(product) * parseFloat(discount)) / 100;
+//   return `Sum with discount ${sum.toFixed(2)}`;
+// }
+
+// console.log(sumWithDiscount(100, 50));
+// console.log(sumWithDiscount(200, 2));
+
+// function temperatureFahrenheit(temp) {
+//   const celsius = parseInt(temp);
+//   const fahrenheit = celsius * (9 / 5) + 32;
+//   return `Temperature on the Celsius temperature scale is ${celsius}, Fahrenheit is ${fahrenheit.toFixed(
+//     2
+//   )}`;
+// }
+
+// console.log(temperatureFahrenheit(19));
+
+// function sumOfStrings(str1, str2) {
+//   return parseInt(str1) + parseInt(str2);
+// }
+// console.log(sumOfStrings("100", "5"));
+
+// const date = new Date();
+
+// console.log(date);
+
+// const date = new Date();
+// console.log(date.getTime());
+
+// function doSomethingAsync(callback) {
+//   setTimeout(() => {
+//     console.log("Робимо щось асинхронно");
+//     callback(); // Викликаємо колбек після завершення асинхронної операції
+//   }, 1000);
+// }
+
+// function finish() {
+//   console.log("Операція завершена");
+// }
+
+// doSomethingAsync(finish); // Передаємо функцію `finish` як колбек
+
+// const isSuccess = true;
+
+// // Create promise
+// const promise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     if (isSuccess) {
+//       resolve("Success! Value passed to resolve function");
+//     } else {
+//       reject("Error! Error passed to reject function");
+//     }
+//   }, 2000);
+// });
+
+// // Registering promise callbacks
+// promise.then(
+//   (value) => {
+//     console.log(value); // "Success! Value passed to resolve function"
+//   },
+//   (error) => {
+//     console.log(error); // "Error! Error passed to reject function"
+//   }
+// );
+
+// const promise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve(5);
+//   }, 2000);
+// });
+
+// promise
+//   .then((value) => {
+//     console.log(value); // 5
+//     return value * 2;
+//   })
+//   .then((value) => {
+//     console.log(value); // 10
+//     return value * 3;
+//   })
+//   .then((value) => {
+//     console.log(value); // 30
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   })
+//   .finally(() => {
+//     console.log("finally");
+//   });
+
+const p1 = new Promise((resolve, reject) => {
+  setTimeout(() => resolve(1), 1000);
 });
 
-form.addEventListener("submit", (evt) => {
-  evt.preventDefault();
-  console.log(evt.target.elements.message.value);
-  localStorage.removeItem(localStorageKey);
-  form.reset();
+const p2 = new Promise((resolve, reject) => {
+  setTimeout(() => reject(2), 2000);
 });
+
+Promise.race([p1, p2])
+  .then((value) => console.log(value)) // 1
+  .catch((error) => console.log(error));

@@ -1583,14 +1583,242 @@
 //     console.log("finally");
 //   });
 
-const p1 = new Promise((resolve, reject) => {
-  setTimeout(() => resolve(1), 1000);
-});
+// const p1 = new Promise((resolve, reject) => {
+//   setTimeout(() => resolve(1), 1000);
+// });
 
-const p2 = new Promise((resolve, reject) => {
-  setTimeout(() => reject(2), 2000);
-});
+// const p2 = new Promise((resolve, reject) => {
+//   setTimeout(() => reject(2), 2000);
+// });
 
-Promise.race([p1, p2])
-  .then((value) => console.log(value)) // 1
-  .catch((error) => console.log(error));
+// Promise.race([p1, p2])
+//   .then((value) => console.log(value)) // 1
+//   .catch((error) => console.log(error));
+
+// if (null) {
+//   console.log("Block if");
+// } else {
+//   console.log("Block else");
+// }
+
+// if (0) {
+//   console.log("Block if");
+// } else {
+//   console.log("Block else");
+// }
+
+// if (5) {
+//   console.log("Block if");
+// } else {
+//   console.log("Block else");
+// }
+
+// const screenWidth = 700;
+// const sm = 320;
+// const md = 768;
+// const lg = 1200;
+
+// if (screenWidth <= sm) {
+//   console.log("Mobile screen");
+// } else if (screenWidth > sm && screenWidth <= md) {
+//   console.log("Tablet screen");
+// } else if (screenWidth > md && screenWidth <= lg) {
+//   console.log("Desktop screen");
+// } else {
+//   console.log("Godzilla screen");
+// }
+
+// let username = ""; // Assuming username comes from some input field
+// username = username || "Guest";
+// console.log("Welcome, " + username); // Output: Welcome, Guest
+
+// let count = 0;
+
+// while (count < 20) {
+//   console.log(`Count: ${count}`);
+//   count += 1;
+// }
+
+// let clientCounter = 18;
+// const maxClients = 25;
+
+// while (clientCounter < maxClients) {
+//   console.log(clientCounter);
+//   clientCounter += 1;
+// }
+
+// function calculateEvenTotal(number) {
+//   let sum = 0;
+//   for (let i = 1; i <= number; i++) {
+//     if (i % 2 === 0) {
+//       sum += i;
+//     }
+//   }
+//   return sum;
+// }
+
+// console.log(calculateEvenTotal(10));
+
+// function findNumber(start, end, divisor) {
+//   for (let i = start; i <= end; i++) {
+//     if (i % divisor === 0) {
+//       return i;
+//     }
+//   }
+// }
+
+// console.log(findNumber(2, 6, 5));
+
+// function makeTransaction(quantity, pricePerDroid, customerCredits) {
+//   const totaPrice = quantity * pricePerDroid;
+//   if (totaPrice < customerCredits) {
+//     return `You ordered ${quantity} droids worth ${totaPrice} credits!`;
+//   } else {
+//     return "Insufficient funds!";
+//   }
+// }
+
+// console.log(makeTransaction(5, 3000, 23000)); // "You ordered 5 droids worth 15000 credits!"
+// console.log(makeTransaction(3, 1000, 15000)); // "You ordered 3 droids worth 3000 credits!"
+// console.log(makeTransaction(10, 5000, 8000)); // "Insufficient funds!"
+// console.log(makeTransaction(8, 2000, 10000)); // "Insufficient funds!"
+// console.log(makeTransaction(10, 500, 5000)); // "You ordered 10 droids worth 5000 credits!"
+
+// function formatMessage(message, maxLength) {
+//   const sliceMessage = message.slice(0, maxLength);
+//   if (sliceMessage.length < message.length) {
+//     return sliceMessage + `...`;
+//   } else {
+//     return sliceMessage;
+//   }
+// }
+// console.log(formatMessage("Curabitur ligula sapien", 16)); // "Curabitur ligula..."
+// console.log(formatMessage("Curabitur ligula sapien", 23)); // "Curabitur ligula sapien"
+// console.log(formatMessage("Vestibulum facilisis purus nec", 20)); // "Vestibulum facilisis..."
+// console.log(formatMessage("Vestibulum facilisis purus nec", 30)); // "Vestibulum facilisis purus nec"
+// console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 15)); // "Nunc sed turpis..."
+// console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 41)); // "Nunc sed turpis a felis in nunc fringilla"
+
+// function massiveNumbers(massive) {
+//   let sum = 0;
+//   for (let i = 0; i < massive.length; i++) {
+//     sum += massive[i];
+//   }
+//   return sum;
+// }
+
+// console.log(massiveNumbers([1, 2, 3, 4, 5]));
+
+// function reverseString(str) {
+//   return str.split("").toReversed().join("");
+// }
+
+// console.log(reverseString("lox"));
+
+// function toUpper(array) {
+//   const firstWord = array[0].toUpperCase();
+//   return firstWord + array.slice(1);
+// }
+
+// console.log(toUpper("vlad"));
+
+// function dubleNumeros(...nums) {
+//   let massiveOfNum = [];
+//   for (let i = 0; i < nums.length; i++) {
+//     massiveOfNum.push(nums[i] * nums[i]);
+//   }
+//   return massiveOfNum;
+// }
+
+// console.log(dubleNumeros(1, 3, 4, 5, 6, 8, 9));
+
+// function checkForSpam(message) {
+//   const spamMessage = message.toLowerCase();
+//   if (
+//     spamMessage.includes("spam") ||
+//     spamMessage.includes("sale") ||
+//     spamMessage.includes("money")
+//   ) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+// console.log(checkForSpam("Latest technology news")); // false
+// console.log(checkForSpam("JavaScript weekly newsletter")); // false
+// console.log(checkForSpam("Get best sale offers now!")); // true
+// console.log(checkForSpam("Amazing SalE, only tonight!")); // true
+// console.log(checkForSpam("Trust me, this is not a spam message")); // true
+// console.log(checkForSpam("Get rid of sPaM emails. Our book in on sale!")); // true
+// console.log(checkForSpam("[SPAM] How to earn fast money?")); // true
+// function getShippingCost(country) {
+//   switch (country) {
+//     case "Australia":
+//       return "Shipping to Australia will cost 170 credits";
+//     case "China":
+//       return "Shipping to China will cost 100 credits";
+//     case "Chile":
+//       return "Shipping to Chile will cost 250 credits";
+//     case "Jamaica":
+//       return "Shipping to Jamaica will cost 120 credits";
+//     default:
+//       return "Sorry, there is no delivery to your country";
+//   }
+// }
+
+// console.log(getShippingCost("Australia")); // "Shipping to Australia will cost 170 credits"
+// console.log(getShippingCost("Germany")); // "Sorry, there is no delivery to your country"
+// console.log(getShippingCost("China")); // "Shipping to China will cost 100 credits"
+// console.log(getShippingCost("Chile")); // "Shipping to Chile will cost 250 credits"
+// console.log(getShippingCost("Jamaica")); // "Shipping to Jamaica will cost 120 credits"
+// console.log(getShippingCost("Sweden")); // "Sorry, there is no delivery to your country"
+
+// function cicle(...num) {
+//   let number = 0;
+//   for (let i = 0; i < num.length; i++) {
+//     number += num[i];
+//   }
+//   return number;
+// }
+
+// console.log(cicle(1, 2, 3, 4, 5));
+
+// function showStr(...str) {
+//   str.forEach((item) => console.log(item));
+// }
+
+// showStr([1, 5, 10, 20, 25]);
+// showStr(["apple", "banana", "orange", "grape", "kiwi"]);
+
+// function dubbleNum(...num) {
+//   let dubble = [];
+//   for (let i = 0; i < num.length; i++) {
+//     dubble.push(num[i] * num[i]);
+//   }
+//   return dubble;
+// }
+
+// console.log(dubbleNum(1, 2, 3, 4, 5));
+
+// function sumOfNum(...num) {
+//   let sum = 0;
+//   for (let i = 0; i < num.length; i++) {
+//     sum += num[i];
+//   }
+//   return sum;
+// }
+
+// console.log(sumOfNum(1, 2, 3, 4, 5));
+
+// function multiplicationMum(num) {
+//   for (let i = 1; i <= 10; i++) {
+//     for (let j = 1; j <= 10; j++) {
+//       let result = i * j;
+//       console.log(`${i} * ${j} = ${result}`);
+//     }
+//     console.log("\n"); // Порожній рядок між кожними рядками таблиці
+//   }
+// }
+
+// console.log(multiplicationMum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));

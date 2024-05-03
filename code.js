@@ -1822,3 +1822,74 @@
 // }
 
 // console.log(multiplicationMum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+
+// function factorial(num) {
+//   if (num === 0 || num === 1) {
+//     return 1;
+//   } else {
+//     let result = 1;
+//     for (let i = 2; i <= num; i++) {
+//       result *= i;
+//     }
+//     return result;
+//   }
+// }
+// console.log(factorial(4));
+
+// function sumOfNumbers(...num) {
+//   let sumNumbers = 0;
+//   for (let i = 0; i < num.length; i++) {
+//     sumNumbers += num[i];
+//   }
+//   return sumNumbers;
+// }
+
+// console.log(sumOfNumbers(5, 6, 7, 8));
+
+// Таблиця множення: Виведи на екран таблицю множення з заданого користувачем числа.
+// Наприклад, для числа 5 програма повинна вивести таблицю множення від 1 до 10 для числа 5(5x1, 5x2, ..., 5x10).
+
+// function multiplicationTable(num) {
+//   let table = [];
+//   for (let i = 1; i <= 10; i++) {
+//     table.push(num * i);
+//   }
+//   return table;
+// }
+
+// function printTable(num) {
+//   let table = multiplicationTable(num);
+//   for (let i = 0; i < table.length; i++) {
+//     console.log(`${num} x ${i + 1} = ${table[i]}`);
+//   }
+// }
+
+// printTable(5); // Виведе таблицю множення для числа 5
+
+function isPrime(num) {
+  if (num <= 1) return false; // Відкидаємо 0 і 1, вони не є простими числами
+  if (num <= 3) return true; // 2 та 3 є простими числами
+
+  // Перевіряємо, чи є число дільником чисел, менших або рівних його квадратного кореня
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function findPrimes(start, end) {
+  let primes = [];
+  for (let i = start; i <= end; i++) {
+    if (isPrime(i)) {
+      primes.push(i);
+    }
+  }
+  return primes;
+}
+
+let startRange = 1;
+let endRange = 100;
+console.log(`Прості числа в діапазоні від ${startRange} до ${endRange}:`);
+console.log(findPrimes(startRange, endRange));

@@ -1866,30 +1866,64 @@
 
 // printTable(5); // Виведе таблицю множення для числа 5
 
-function isPrime(num) {
-  if (num <= 1) return false; // Відкидаємо 0 і 1, вони не є простими числами
-  if (num <= 3) return true; // 2 та 3 є простими числами
+// function isPrime(num) {
+//   if (num <= 1) return false; // Відкидаємо 0 і 1, вони не є простими числами
+//   if (num <= 3) return true; // 2 та 3 є простими числами
 
-  // Перевіряємо, чи є число дільником чисел, менших або рівних його квадратного кореня
-  for (let i = 2; i <= Math.sqrt(num); i++) {
-    if (num % i === 0) {
-      return false;
-    }
-  }
-  return true;
-}
+//   // Перевіряємо, чи є число дільником чисел, менших або рівних його квадратного кореня
+//   for (let i = 2; i <= Math.sqrt(num); i++) {
+//     if (num % i === 0) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
 
-function findPrimes(start, end) {
-  let primes = [];
-  for (let i = start; i <= end; i++) {
-    if (isPrime(i)) {
-      primes.push(i);
-    }
-  }
-  return primes;
-}
+// function findPrimes(start, end) {
+//   let primes = [];
+//   for (let i = start; i <= end; i++) {
+//     if (isPrime(i)) {
+//       primes.push(i);
+//     }
+//   }
+//   return primes;
+// }
 
-let startRange = 1;
-let endRange = 100;
-console.log(`Прості числа в діапазоні від ${startRange} до ${endRange}:`);
-console.log(findPrimes(startRange, endRange));
+// let startRange = 1;
+// let endRange = 100;
+// console.log(`Прості числа в діапазоні від ${startRange} до ${endRange}:`);
+// console.log(findPrimes(startRange, endRange));
+
+///////////////////////////////////
+
+// function isPrime(num) {
+//   if (num <= 1) return false;
+//   for (let i = 2; i <= Math.sqrt(num); i++) {
+//     if (num % i === 0) return false;
+//   }
+//   return true;
+// }
+
+// function simpleNum(...nums) {
+//   return nums.filter(isPrime);
+// }
+
+// console.log(simpleNum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+
+// ??????
+
+// function factorialNum(...nums) {
+//   let result = [];
+//   for (let num of nums) {
+//     let factorial = 1;
+//     for (let i = 1; i <= num; i++) {
+//       factorial *= i;
+//     }
+//     result.push(factorial);
+//   }
+//   return result;
+// }
+
+// console.log(factorialNum(1, 2, 3, 4, 5, 6, 7, 8, 9));
+
+// ????

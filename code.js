@@ -1927,3 +1927,176 @@
 // console.log(factorialNum(1, 2, 3, 4, 5, 6, 7, 8, 9));
 
 // ????
+
+// function calculateTotalPrice(order) {
+//   let totalPrice = 0;
+//   for (let i = 0; i < order.length; i++) {
+//     totalPrice += order[i];
+//   }
+//   return totalPrice;
+// }
+
+// console.log(calculateTotalPrice([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+
+// const planets = ["Earth", "Mars", "Venus"];
+
+// for (const planet of planets) {
+//   console.log(planet);
+// }
+
+// // ✅ Працює виклик перед оголошенням
+// multiply(1, 2, 3);
+
+// function multiply(x, y, z) {
+//   console.log(x * y * z);
+// }
+
+// // ✅ Працює виклик після оголошення
+// multiply(4, 5, 6);
+
+// const book = {
+//   title: "The Last Kingdom",
+//   author: "Bernard Cornwell",
+//   genres: ["historical prose", "adventure"],
+//   rating: 8.38,
+// };
+
+// for (const key in book) {
+//   console.log(key); // Ключ
+//   console.log(book[key]); // Значення властивості з таким ключем
+// }
+
+// Функція має повернути результат перевірки, чи помістяться всі товари в контейнер.
+//  Тобто порахувати загальну кількість товарів в об’єкті products і повернути true, якщо вона
+//   менше або дорівнює containerSize, і false, якщо ні.
+
+// function isEnoughCapacity(products, containerSize) {
+//   const arrayStr = Object.values(products).reduce(
+//     (acc, value) => acc + value,
+//     0
+//   );
+//   return arrayStr <= containerSize;
+// }
+
+// console.log(isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)); // true
+
+// console.log(isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)); // false
+
+// console.log(isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14)); // true
+
+// console.log(isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)); // false
+
+// function calcAverageCalories(days) {
+//   let average = 0;
+//   for (let i = 0; i < days.length; i++) {
+//     average += days[i].calories;
+//   }
+//   return average / days.length;
+// }
+
+// console.log(
+//   calcAverageCalories([
+//     { day: "monday", calories: 3010 },
+//     { day: "tuesday", calories: 3200 },
+//     { day: "wednesday", calories: 3120 },
+//     { day: "thursday", calories: 2900 },
+//     { day: "friday", calories: 3450 },
+//     { day: "saturday", calories: 3280 },
+//     { day: "sunday", calories: 3300 },
+//   ])
+// ); // 3180
+
+// console.log(
+//   calcAverageCalories([
+//     { day: "monday", calories: 2040 },
+//     { day: "tuesday", calories: 2270 },
+//     { day: "wednesday", calories: 2420 },
+//     { day: "thursday", calories: 1900 },
+//     { day: "friday", calories: 2370 },
+//     { day: "saturday", calories: 2280 },
+//     { day: "sunday", calories: 2610 },
+//   ])
+// ); // 2270
+
+// const profile = {
+//   username: "Jacob",
+//   playTime: 300,
+//   changeUsername(newName) {
+//     this.username = newName;
+//   },
+//   updatePlayTime(hours) {
+//     this.playTime += hours;
+//   },
+//   getInfo() {
+//     return `${this.username} has ${this.playTime} active hours!`;
+//   },
+// };
+
+// console.log(profile.getInfo()); // "Jacob has 300 active hours!"
+
+// profile.changeUsername("Marco");
+// console.log(profile.getInfo()); // "Marco has 300 active hours!"
+
+// profile.updatePlayTime(20);
+// console.log(profile.getInfo()); // "Marco has 320 active hours!"
+
+// Перероби функцію на проміс таким чином, щоб проміс повертав значення
+// через 2 секунди після виклику функції
+
+// function greet() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {}, 2000);
+//     resolve("hello world");
+//   });
+// }
+// greet().then((value) => console.log(value));
+
+// Кнопка increment повинна кожну секунду збільшувати значення на 1
+// Кнопка decrement має кожну секунду зменшувати значення на 1
+
+// import { refs } from "./refs.js";
+// import { onButtonIncrementClick, onButtonDecrementClick } from "./hendler.js";
+// refs.buttonIncrement.addEventListener(`click`, onButtonIncrementClick);
+// refs.buttonDecrement.addEventListener(`click`, onButtonDecrementClick);
+
+// Перероби код так, щоб усі дані збиралися
+// одночасно і приходили у вигляді масиву
+const getData = () =>
+  new Promise((res) => {
+    setTimeout(() => {
+      const data = 1;
+      console.log(data);
+      res(data);
+    }, 1000);
+  });
+
+const getNewData = () =>
+  new Promise((res) => {
+    setTimeout(() => {
+      const data = 2;
+      console.log(data);
+      res(data);
+    }, 1000);
+  });
+
+const getAnotherData = () =>
+  new Promise((res) => {
+    setTimeout(() => {
+      const data = 3;
+      console.log(data);
+      res(data);
+    }, 1000);
+  });
+
+const getLastData = () =>
+  new Promise((res) => {
+    setTimeout(() => {
+      const data = 4;
+      console.log(data);
+      res(data);
+    }, 1000);
+  });
+
+const arr = [];
+
+console.log(getLastData());

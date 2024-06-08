@@ -2061,42 +2061,336 @@
 
 // Перероби код так, щоб усі дані збиралися
 // одночасно і приходили у вигляді масиву
-const getData = () =>
-  new Promise((res) => {
-    setTimeout(() => {
-      const data = 1;
-      console.log(data);
-      res(data);
-    }, 1000);
-  });
+// const getData = () =>
+//   new Promise((res) => {
+//     setTimeout(() => {
+//       const data = 1;
+//       console.log(data);
+//       res(data);
+//     }, 1000);
+//   });
 
-const getNewData = () =>
-  new Promise((res) => {
-    setTimeout(() => {
-      const data = 2;
-      console.log(data);
-      res(data);
-    }, 1000);
-  });
+// const getNewData = () =>
+//   new Promise((res) => {
+//     setTimeout(() => {
+//       const data = 2;
+//       console.log(data);
+//       res(data);
+//     }, 1000);
+//   });
 
-const getAnotherData = () =>
-  new Promise((res) => {
-    setTimeout(() => {
-      const data = 3;
-      console.log(data);
-      res(data);
-    }, 1000);
-  });
+// const getAnotherData = () =>
+//   new Promise((res) => {
+//     setTimeout(() => {
+//       const data = 3;
+//       console.log(data);
+//       res(data);
+//     }, 1000);
+//   });
 
-const getLastData = () =>
-  new Promise((res) => {
-    setTimeout(() => {
-      const data = 4;
-      console.log(data);
-      res(data);
-    }, 1000);
-  });
+// const getLastData = () =>
+//   new Promise((res) => {
+//     setTimeout(() => {
+//       const data = 4;
+//       console.log(data);
+//       res(data);
+//     }, 1000);
+//   });
 
-const arr = [];
+// const arr = [];
 
-console.log(getLastData());
+// console.log(getLastData());
+
+// function findOdd(A) {
+//   const counts = A.reduce((acc, num) => {
+//     // Increment the count for each number
+//     acc[num] = (acc[num] || 0) + 1;
+//     return acc;
+//   }, {});
+
+//   // Find and return the number with an odd count
+//   for (const num in counts) {
+//     if (counts[num] % 2 !== 0) {
+//       return parseInt(num);
+//     }
+//   }
+// }
+
+// console.log(findOdd([1, 1, 2, 2, 3, 3, 6, 5, 5])); // Output: 6
+// // зробити 5
+
+// // цикл -
+// // максимальне число -
+
+// function countBy(x, n) {
+//   let z = [];
+//   for (let i = 1; i <= n; i++) {
+//     z.push(i * x);
+//   }
+
+//   return z;
+// }
+
+// console.log(countBy(2, 5));
+// console.log(countBy(1, 10));
+
+// function persistence(num) {
+//   let count = 0;
+//   while ((num >= 10) & (num !== 0)) {
+//     const arrayNum = num
+//       .toString()
+//       .split("")
+//       .map((str) => parseInt(str));
+
+//     num = arrayNum.reduce((acc, num) => {
+//       return acc * num;
+//     }, 1);
+
+//     count++;
+//   }
+
+//   return count;
+// }
+
+// console.log(persistence(39));
+
+// function twoSort(s) {
+//   s.sort();
+//   let firstString = s[0];
+//   return firstString.toLowerCase().split("").join("***");
+// }
+
+// console.log(
+//   twoSort([
+//     "bitcoin",
+//     "take",
+//     "over",
+//     "the",
+//     "world",
+//     "maybe",
+//     "who",
+//     "knows",
+//     "perhaps",
+//   ])
+// );
+// console.log(
+//   twoSort([
+//     "turns",
+//     "out",
+//     "random",
+//     "test",
+//     "cases",
+//     "are",
+//     "easier",
+//     "than",
+//     "writing",
+//     "out",
+//     "basic",
+//     "ones",
+//   ])
+// );
+
+// function switchItUp(number) {
+//   switch (number) {
+//     case 0:
+//       return "Zero";
+//     case 1:
+//       return "One";
+
+//     case 2:
+//       return "Two";
+
+//     case 3:
+//       return "Three";
+
+//     case 4:
+//       return "Four";
+
+//     case 5:
+//       return "Five";
+
+//     case 6:
+//       return "Six";
+
+//     case 7:
+//       return "Seven";
+
+//     case 8:
+//       return "Eight";
+
+//     case 9:
+//       return "Nine";
+//   }
+// }
+
+// console.log(switchItUp(1));
+
+// function expandedForm(num) {
+//   const numStr = num.toString();
+//   const length = numStr.length;
+//   let expandedParts = [];
+
+//   for (let i = 0; i < length; i++) {
+//     if (numStr[i] !== "0") {
+//       const zeros = "0".repeat(length - i - 1);
+//       expandedParts.push(numStr[i] + zeros);
+//     }
+//   }
+
+//   return expandedParts.join(" + ");
+// }
+
+// console.log(expandedForm(12));
+
+// function randomOperations() {
+//   const operations = ["+", "*"];
+
+//   function getRandomNumber() {
+//     return Math.floor(Math.random() * 9) + 1;
+//   }
+
+//   function getRandomOperation() {
+//     const randomIndex = Math.floor(Math.random() * operations.length);
+//     return operations[randomIndex];
+//   }
+
+//   let result;
+//   let expression;
+//   let a, b, c, op1, op2;
+
+//   do {
+//     a = getRandomNumber();
+//     b = getRandomNumber();
+//     c = getRandomNumber();
+
+//     op1 = getRandomOperation();
+//     op2 = getRandomOperation();
+
+//     expression = `${a} ${op1} ${b} ${op2} ${c}`;
+
+//     result = eval(expression);
+//   } while (result < 1 || result > 9);
+// }
+
+// randomOperations();
+
+// function isValidWalk(walk) {
+//   if (walk.length === 10) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+// console.log(isValidWalk(["n", "s", "n", "s", "n", "s", "n", "s", "n", "s"]));
+// console.log(
+//   isValidWalk(["w", "e", "w", "e", "w", "e", "w", "e", "w", "e", "w", "e"])
+// );
+
+// function minMax(arr) {
+//   return [Math.min(...arr), Math.max(...arr)]; // fix me!
+// }
+// console.log(minMax([1, 5]));
+
+// function towerBuilder(nFloors) {
+//   let tower = [];
+//   const width = 2 * nFloors - 1;
+
+//   for (let i = 1; i <= nFloors; i++) {
+//     const numStars = 2 * i - 1;
+//     const numSpaces = (width - numStars) / 2;
+//     const floor =
+//       " ".repeat(numSpaces) + "*".repeat(numStars) + " ".repeat(numSpaces);
+//     tower.push(floor);
+//   }
+
+//   return tower;
+// }
+// console.log(towerBuilder(1));
+// console.log(towerBuilder(2));
+// console.log(towerBuilder(3));
+
+// Test.assertDeepEquals(towerBuilder(1), ["*"]);
+// Test.assertDeepEquals(towerBuilder(2), [" * ","***"]);
+// Test.assertDeepEquals(towerBuilder(3), ["  *  "," *** ","*****"]);
+
+// function piramidBuilt(nFloors) {
+//   const pyramid = [];
+//   const pyramidWidth = 2 * nFloors - 1;
+
+//   for (let i = 1; i <= nFloors; i++) {
+//     const numSpaces = (pyramidWidth - (2 * i - 1)) / 2;
+//     const floor =
+//       " ".repeat(numSpaces) + "| |".repeat(2 * i - 1) + " ".repeat(numSpaces);
+//     pyramid.push(floor);
+//   }
+
+//   return pyramid;
+// }
+
+// console.log(piramidBuilt(1));
+// console.log(piramidBuilt(2));
+// console.log(piramidBuilt(3));
+
+// function maps(x) {
+//   let doubleArrayNum = [];
+//   x.forEach((element) => {
+//     doubleArrayNum.push(element * 2);
+//   });
+//   return doubleArrayNum;
+// }
+// console.log(maps([1, 2, 3, 4, 5, 6, 7]));
+// function twiceAsOld(dadYearsOld, sonYearsOld) {
+//   if (dadYearsOld === sonYearsOld * 2) {
+//     return 0;
+//   } else {
+//     return Max.ceil(2 - (dadYearsOld / sonYearsOld) * sonYearsOld);
+//   }
+// }
+
+// console.log(twiceAsOld(55, 30));
+
+// const number = function (busStops) {
+//   if (busStops === 0) {
+//     return 0;
+//   } else {
+//     return busStops.reduce((acc, [on, of]) => acc + on - of, 0);
+//   }
+// };
+
+// function wave(str) {
+//   let result = [];
+
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] === " ") {
+//       continue;
+//     }
+
+//     let waveStr = str.slice(0, i) + str[i].toUpperCase() + str.slice(i + 1);
+//     result.push(waveStr);
+//   }
+
+//   return result;
+// }
+
+// ???????????????????????????????????????????????///s
+
+// function squareDigits(num) {
+//   const numLogic = String(num)
+//     .split("")
+//     .map((x) => x * x)
+//     .join("");
+//   return parseInt(numLogic);
+// }
+
+// console.log(squareDigits(3212));
+
+// function sumArray(array) {
+//   if (array.length <= 1) return 0;
+
+//   const min = Math.min(...array);
+//   const max = Math.max(...array);
+
+//   const slice = array.filter((value) => value > min && value < max);
+
+//   return slice.reduce((acc, value) => acc + value, 0);
+// }

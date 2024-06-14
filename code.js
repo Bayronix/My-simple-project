@@ -2394,3 +2394,52 @@
 
 //   return slice.reduce((acc, value) => acc + value, 0);
 // }
+
+// function mergeSort(unsortedArray) {
+//   // условие выхода из рекурсии
+//   // если переданный массив имеет менее двух элементов - нечего сортировать
+//   if (unsortedArray.length < 2) {
+//     return unsortedArray;
+//   }
+
+//   // находим центр при помощи побитовой операции сдвига на один бит вправо
+//   // аналог деления на два и округления вниз, только эффективнее и элегантнее
+//   const middle = unsortedArray.length >> 1;
+//   const left = unsortedArray.slice(0, middle); // левая часть
+//   const right = unsortedArray.slice(middle); // правая часть
+
+//   return merge(mergeSort(left), mergeSort(right));
+// }
+
+// function merge(left, right) {
+//   const result = [];
+//   let leftIndex = 0;
+//   let rightIndex = 0;
+
+//   // сравниваем элементы левой и правой части и объединяем их в один массив
+//   while (leftIndex < left.length && rightIndex < right.length) {
+//     if (left[leftIndex] < right[rightIndex]) {
+//       result.push(left[leftIndex]);
+//       leftIndex++;
+//     } else {
+//       result.push(right[rightIndex]);
+//       rightIndex++;
+//     }
+//   }
+
+//   // если остались элементы в левой части
+//   while (leftIndex < left.length) {
+//     result.push(left[leftIndex]);
+//     leftIndex++;
+//   }
+
+//   // если остались элементы в правой части
+//   while (rightIndex < right.length) {
+//     result.push(right[rightIndex]);
+//     rightIndex++;
+//   }
+
+//   return result;
+// }
+
+// console.log(mergeSort([5, 4, 3, 1, 4, 8, 7]));
